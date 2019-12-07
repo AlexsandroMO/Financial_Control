@@ -1,5 +1,24 @@
 from django.test import TestCase
 
+
+#https://www.geeksforgeeks.org/textfield-django-models/
+
+
+
+
+#pip install django-crispy-forms
+
+#Zerar senha do admin
+#python manage.py shell
+#from django.contrib.auth.models import User
+#User.objects.filter(is_superuser=True)
+
+#usr = User.objects.get(username='nome-do-administrador')
+#usr.set_password('nova-senha')
+#usr.save()
+
+
+
 '''Upload documents on Github
 
 git clone <nome>
