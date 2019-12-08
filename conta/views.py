@@ -15,9 +15,9 @@ def taskList(request):
     search = request.GET.get('search')
 
     if search:
-        tasks = Task.objects.filter(name__icontains=search)
+        tasks = Task.objects.filter(name__icontains=search, user=request.user)
     else:
-        tasks_list = Task.objects.all().order_by('-type_task')
+        tasks_list = Task.objects.all().order_by('-type_task').filter(user=request.user)
         paginator = Paginator(tasks_list, 16) #quantidde de linhas
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
@@ -39,6 +39,7 @@ def newTask(request):
         if form.is_valid():
             task = form.save(commit=False)
             task.done = 'Pagar'
+            task.user = request.user
             task.save()
 
             return redirect('/')
@@ -80,8 +81,14 @@ def deleteTask(request, id):
 
 @login_required
 def faturaTask(request):
-    df = main.read_sql()
-    df2 = main.read_sql2()
+
+    aa = main.read_sql_xx()
+    ss = main.read_sql_user(request.user)
+
+    id_user = ss.id[0]
+
+    df = main.read_sql(id_user)
+    df2 = main.read_sql2(id_user)
     x = df.varcont
     y = df2.varcont
 
@@ -103,6 +110,8 @@ def faturaTask(request):
 
 
     return render(request, 'conta/fatura.html', {'faturar_x': faturar_x,'faturar_y': faturar_y,'faturamento': faturamento})
+
+
 
 
 

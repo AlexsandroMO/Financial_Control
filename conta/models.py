@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class TypeTask(models.Model):
@@ -20,6 +21,7 @@ class Task(models.Model):
     description = models.TextField(verbose_name='Descrição de Conta', null=False)
     varcont = models.DecimalField(verbose_name='Valor da Conta', max_digits=6, decimal_places=2)
     done = models.CharField(verbose_name='Status da Conta', max_length=7,choices=STATUS,)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
