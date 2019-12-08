@@ -5,15 +5,35 @@
 
 {% block content %}
 
-<div class="offset-1 col-10 list-div">
+
+<div class="offset-1 col-16 list-div">
     <h2>Relatório de Faturamento</h2>
-    <br>
-    <p>Valor das Contas a Pagar: R$ {{faturar_x}}</p>
-    <p>Valor das Contas Pagas: R$ {{faturar_y}}</p>
-    <br>
-    <p>Valor total do Período: R$ {{faturamento}}</p>
-    
+
+    <table class="minhaTabela">
+        <thead>
+            <tr ><br><br>
+                <th scope="row" rowspan="1" colspan="1">Descrição</th>
+                <th id="tr-alinha-c">Valor</th>
+                <th id="tr-alinha2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="tr-alinha-L">&nbsp Valor total das contas &nbsp </td>
+                <td>&nbsp R$ {{faturamento}} &nbsp </td>
+            </tr>
+            <tr>
+                <td id="tr-alinha-L">&nbsp Valor das contas à pagar &nbsp </td>
+                <td>&nbsp R$ {{faturar_x}} &nbsp </td>
+            </tr>
+            <tr>
+                <td id="tr-alinha-L">&nbsp Valor das contas pagas &nbsp </td>
+                <td>&nbsp R$ {{faturar_y}} &nbsp </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
 <br>
 <br>
 

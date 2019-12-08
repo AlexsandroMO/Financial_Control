@@ -34,6 +34,18 @@
     text-decoration: none;
 }
 
+#alinha-bt{
+    display: inline-block;
+    cursor: pointer;
+    display: inline-block;
+    color: #FFF;
+    padding: 6px;
+    border-radius: 5px;
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}
+
 .add-div{
     background-color: #347;
     cursor: pointer;
@@ -46,7 +58,7 @@
 
 .fas.fa-plus{
     color: #FFF;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 5px;
 }
 
@@ -63,7 +75,22 @@
     margin-top: 15px;
     margin-bottom: 15px;
     display: inline-block;
+    position: relative;
+    top: -10px;
 }
+
+/* Filetr */
+.filter-div{
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+#filtery{
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+
 
 /* .form-control{
     position: absolute;
@@ -86,18 +113,19 @@
     list-style: none;
     font-size: 20px;
     height: 50px;
+    padding: 0 15px;
     padding-top: 10px;
     border-bottom: 1px dashed #ccc;
+    border-radius: 10px;
+
 }
 
-.fas.fa-trash, .fas.fa-edit {
-    cursor: pointer;
-    margin: 5px;
-    font-size: 20px;
-    float: right;
+.task-item.done{
+    background-color: #ccc;
+    border: 1px solid #778899;
 }
 
-.fas.fa-check{
+.fas.fa-trash, .fas.fa-edit, .fas.fa-check{
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
@@ -110,6 +138,14 @@
 
 .fas.fa-edit {
     color: #13c43f;
+}
+
+.fas.fa-check {
+    color: #ccc;
+}
+
+.done .fas.fa-check {
+    color: #3476e2;
 }
 
 #name-task {
@@ -190,6 +226,27 @@ ul.messages li{
     width: auto;
     margin-right: 20px;
 }
+#tr-alinha2{
+    width: 80px;
+    margin-right: 20px;
+    color: white;
+}
+
+.change-form-p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+#tr-alinha-L{
+    width: auto;
+    text-align: left;
+    margin-right: 20px;
+}
+
+#tr-alinha-c{
+    text-align: center;
+}
+
 #tr-alinha2{
     width: 80px;
     margin-right: 20px;

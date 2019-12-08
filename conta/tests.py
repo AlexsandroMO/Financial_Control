@@ -4,8 +4,6 @@ from django.test import TestCase
 #https://www.geeksforgeeks.org/textfield-django-models/
 
 
-
-
 #pip install django-crispy-forms
 
 #Zerar senha do admin

@@ -22,32 +22,47 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          {% if user.is_authenticated %}
-          <li class="nav-item">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
             <a class="nav-link" href="/">Contas</a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
             <a class="nav-link" href="/accounts/login/">Usuários</a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
             <a class="nav-link" href="/accounts/register/">Cadastro</a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
             <a class="nav-link" href="fatura/">Faturar</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="accounts/login">Entrar</a>
-          </li>
-          {% endif %}
-          <li class="nav-item">
+            </li>
+            {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="accounts/login">Entrar</a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="accounts/logout">Sair</a>
-          </li>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link" href="accounts/logout">Sair</a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">&nbsp;</a>
+            </li>
+
+            <div class="col-4 search-div">
+                <form method="GET" id="search-form">
+                    <input class="form-control" type="search" id="search" name="search" placeholder="Localizar Conta" value="{{request.GET.search}}">
+                    <i class="fas fa-search" id="search-btn"></i>
+                </form>
+            </div>
+
           {% endif %}
+
+
+
+
         </ul>
       </div>
     </nav>
