@@ -38,6 +38,8 @@ git branch - verifica as branchs
 git checkout master - entra na master
 git merge origin "nome" 
 
+git push origin master
+
 git branch -D "nome"- reletar branch
 
 '''
