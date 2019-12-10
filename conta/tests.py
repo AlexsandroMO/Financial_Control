@@ -35,7 +35,8 @@ git checkout nome entra na branch
 
 git branch - verifica as branchs
 
-git checkout master - entra na master'''
+git checkout master - entra na master
+git merge origin "nome" '''
 
 
 #Heroku
