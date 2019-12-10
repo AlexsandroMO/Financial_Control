@@ -6,8 +6,35 @@
 {% block content %}
 
 
-<div class="offset-1 col-16 list-div">
-    <h2>Relatório de Faturamento</h2>
+<div class="offset-1 col-12 list-div">
+    <h3>Relatório de Faturamento</h3>
+
+    <table class="table-round-corner" cellspacing="0">
+    <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td>Valor total das contas</td>
+        <td>R$ {{faturamento}}</td>
+    </tr>
+    <tr>
+        <td>Valor das contas à pagar</td>
+        <td>R$ {{faturar_x}}</td>
+    </tr>
+    <tr>
+        <td>Valor das contas pagas</td>
+        <td>R$ {{faturar_y}}</td>
+    </tr>
+    </table>
+
+</div>
+
+<br>
+<br>
+
+{% endblock %}
+
 
     <table class="minhaTabela">
         <thead>
@@ -32,10 +59,3 @@
             </tr>
         </tbody>
     </table>
-</div>
-
-<br>
-<br>
-
-
-{% endblock %}

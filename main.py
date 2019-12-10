@@ -51,3 +51,16 @@ def read_sql_xx():
 	conn.close()
 	
 	return read_db
+
+
+def read_sql_user_name(user):
+	conn = sqlite3.connect('db.sqlite3')
+	sql_datas = f"""
+				SELECT username FROM auth_user
+                where username = '{user}';
+    """
+
+	read_db = pd.read_sql_query(sql_datas, conn)
+	conn.close()
+	
+	return read_db

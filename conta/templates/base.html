@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-Compatible" content="ie-edge">
 
-    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -15,14 +15,14 @@
 </head>
 <body>
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <a class="navbar-brand" href="/">Minhas Contas</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            {% if user.is_authenticated %}
+         {% if user.is_authenticated %}
             <li class="nav-item">
             <a class="nav-link" href="/">Contas</a>
             </li>
@@ -44,29 +44,27 @@
             <a class="nav-link" href="/admin">Admin</a>
             </li>
             {% if user.is_authenticated %}
-                <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="accounts/logout">Sair</a>
-                </li>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">&nbsp;</a>
             </li>
 
-            <div class="col-4 search-div">
+           
                 <form method="GET" id="search-form">
-                    <input class="form-control" type="search" id="search" name="search" placeholder="Localizar Conta" value="{{request.GET.search}}">
-                    <i class="fas fa-search" id="search-btn"></i>
+                    <span><input class="form-control" type="search" id="search" name="search" placeholder="Localizar Conta" value="{{request.GET.search}}">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Pesquisar</button></span>
                 </form>
-            </div>
+         
 
           {% endif %}
-
-
-
-
         </ul>
       </div>
     </nav>
-        {% block content %}{% endblock%}
+
+    {% block content %}{% endblock%}
+
     <footer>
         <p>Projeto Django Study</p>  
     </footer>

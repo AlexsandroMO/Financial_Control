@@ -4,15 +4,16 @@
     padding: 0;
 }
 
-/* .container-fluid .row{
+.container-fluid .row{
     margin: 0;
-} */
-
+}
 
 /* Navbar */
  .navbar {
     border-bottom: 1px solid #333;
     margin-bottom: 20px;
+   /* height: 80px;*/
+    
 }
 
 .navbar-nav {
@@ -28,6 +29,11 @@
     letter-spacing: 1px;
 }
 
+h3{
+    padding-top: 6px;
+    padding-bottom: 20px;
+}
+
 /*botão adicionar*/
 
 #add-link{
@@ -37,7 +43,6 @@
 #alinha-bt{
     display: inline-block;
     cursor: pointer;
-    display: inline-block;
     color: #FFF;
     padding: 6px;
     border-radius: 5px;
@@ -77,12 +82,42 @@
     display: inline-block;
     position: relative;
     top: -10px;
+    
+}
+
+
+#search{
+    padding: 0px;
+    height: 30px;
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 130px;
+
+}
+
+#search-btn{
+    padding: 0px;
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
 
 /* Filetr */
 .filter-div{
     margin-bottom: 15px;
     padding: 0;
+    position: relative;
+    top: -30px;
+    right: -80px;
 }
 
 #filtery{
@@ -198,8 +233,21 @@ ul.messages li{
     margin-bottom: 30px;
 }
 
-.minhaTabela tr td{
+
+/*
+.minhaTabela tr td {
     font-size: 18px;
+
+    width: 100%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+
+
     text-align: center;
     width: 200px;
     cursor: pointer;
@@ -207,16 +255,20 @@ ul.messages li{
     border: 1px solid #778899;
     margin-bottom: 20px;
     margin-right: 20px;
+    border-radius: 5px;
+    }
+    */
 
-}
 
 /**Cor quando passar por cima**/
+/*
 .minhaTabela tr:hover td{
     background-color: #B0E0E6;
     margin-right: 20px;
 }
-  
+*/
 /**Cor quando selecionado**/
+/*
 .minhaTabela tr.selecionado td{
     background-color: #CD853F;
     margin-right: 20px;
@@ -256,4 +308,53 @@ ul.messages li{
 .change-form-p{
     margin-top: 30px;
     text-align: center;
+}
+
+*/
+
+
+/*----------------------------------*/
+
+.table-round-corner {
+    margin-top: 15px;
+    width: 80%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+}
+
+/**Cor quando passar por cima**/
+.table-round-corner tr:hover td{
+    background-color: #B0E0E6;
+    margin-right: 20px;
+}
+  
+/**Cor quando selecionado**/
+.table-round-corner tr.selecionado td{
+    background-color: #CD853F;
+    margin-right: 20px;
+}
+
+
+table td {
+    color: #aaa;
+    background-color: white;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+table th{
+    color: white;
+    background-color: #708090;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
 }

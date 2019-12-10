@@ -12,6 +12,10 @@ import pandas as pd
 @login_required
 def taskList(request):
 
+    user = request.user
+    ss = main.read_sql_user_name(user)
+    id_user = ss.username[0]
+
     search = request.GET.get('search')
     filtery = request.GET.get('filtery')
 
@@ -21,11 +25,11 @@ def taskList(request):
         tasks = Task.objects.filter(done=filtery, user=request.user)
     else:
         tasks_list = Task.objects.all().order_by('-type_task').filter(user=request.user)
-        paginator = Paginator(tasks_list, 5) #quantidde de linhas
+        paginator = Paginator(tasks_list, 8) #quantidde de linhas
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
 
-    return render(request, 'conta/list.html', {'tasks': tasks})
+    return render(request, 'conta/list.html', {'tasks': tasks, 'id_user': id_user})
 
 @login_required
 def taskView(request, id):

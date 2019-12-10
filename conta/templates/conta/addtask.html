@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="offset-1 col-10 list-div">
-    <h2>Adicione uma Nova Conta</h2>
+    <h3>Adicione uma Nova Conta</h3>
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}
