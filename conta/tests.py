@@ -30,6 +30,13 @@ git commit -m "texto"
 git push
 '''
 
+'''git checkout -b nome cria uma branch
+git checkout nome entra na branch
+
+git branch - verifica as branchs
+
+git checkout master - entra na master'''
+
 
 #Heroku
 #https://github.com/Gpzim98/django-heroku
