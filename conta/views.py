@@ -7,17 +7,21 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 import main
 import pandas as pd
+import datetime
 
 
 @login_required
 def taskList(request):
 
-    user = request.123
+    user = request.user
     ss = main.read_sql_user_name(user)
     id_user = ss.username[0]
 
     search = request.GET.get('search')
     filtery = request.GET.get('filtery')
+    taskDoneRecently = Task.objects.filter(done='pago', update_at__gt=datetime.datetime.now()-datetime.timedelta(days=30), user=request.user).count()
+    taskPago = Task.objects.filter(done='pago', user=request.user).count()
+    taskPagar = Task.objects.filter(done='pagar', user=request.user).count()
 
     if search:
         tasks = Task.objects.filter(name__icontains=search, user=request.user)
@@ -29,7 +33,9 @@ def taskList(request):
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
 
-    return render(request, 'conta/list.html', {'tasks': tasks, 'id_user': id_user})
+
+    return render(request, 'conta/list.html', {'tasks': tasks, 'id_user': id_user,
+                            'taskDoneRecently': taskDoneRecently, 'taskPago': taskPago, 'taskPagar': taskPagar})
 
 @login_required
 def taskView(request, id):

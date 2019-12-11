@@ -6,19 +6,33 @@
 {% block content %}
 <div class="offset-1 col-10 list-div">
     <h3>Contas de {{id_user}}</h3>
-    
-    <a id="add-link" href="newtask/">
-        <button type="button" class="btn btn-primary" id="alinha-bt"><i class="fas fa-plus" id="plus-afast"></i></button>
-    </a>
-
-    <div class="col-12 filter-div">
-        <span>Filtrar por:</span>
-        <select name="filtery" id="filtery" class="for-control">
-            <option value="">Escolha uma opção</option>
-            <option value="Pago">Contas Pagas</option>
-            <option value="Pagar">Contas à Pagar</option>
-        </select>
+    <div class="container dashboard">
+        <div class="col-4 dashboard-box" id="dashboard-lastdays">
+            <h4>FInalizadas nos ultimos 30 dias</h4>
+            <span>{{ taskDoneRecently }}</span>
+        </div>
+        <div class="col-4 dashboard-box" id="dashboard-pago">
+            <h4>Contas Pagas</h4>
+            <span>{{ taskPago }}</span>
+        </div>
+        <div class="col-4 dashboard-box" id="dashboard-pagar">
+            <h4>Contas A Pagar</h4>
+            <span>{{ taskPagar }}</span>
+        </div>
     </div>
+
+        <a id="add-link" href="newtask/">
+            <button type="button" class="btn btn-primary" id="alinha-bt"><i class="fas fa-plus" id="plus-afast"></i></button>
+        </a>
+
+        <div class="col-12 filter-div">
+            <span>Filtrar por:</span>
+            <select name="filtery" id="filtery" class="for-control">
+                <option value="">Escolha uma opção</option>
+                <option value="Pago">Contas Pagas</option>
+                <option value="Pagar">Contas à Pagar</option>
+            </select>
+        </div>
 
     {% if messages %}
         <ul class="messages">
